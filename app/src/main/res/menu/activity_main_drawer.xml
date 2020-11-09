@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_historial"
+            android:icon="@drawable/ic_menu_historial"
+            android:title="@string/menu_historial" />
+        <item
+            android:id="@+id/nav_vinculacion"
+            android:icon="@drawable/ic_menu_vinculacion_doctores"
+            android:title="@string/menu_vinculacion" />
+
+        //TODO mover este item a la parte inferior de la pantalla
+        <item
+            android:id="@+id/nav_datos"
+            android:icon="@drawable/ic_menu_datos"
+            android:title="@string/menu_datos"
+            />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/menu_settings"
+            />
+    </group>
+</menu>

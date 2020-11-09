@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">SeguimientoPresion</string>
+    <string name="arteriaapp">ArteriaApp</string>
+    <string name="correo_electr_nico">Correo electrónico:</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="ingresar_correo_electr_nico">Ingresar correo electrónico</string>
+    <string name="ingresar_contrase_a">Ingresar contraseña</string>
+    <string name="contrase_a">Contraseña:</string>
+    <string name="no_tienes_cuenta_registrate">¿No tienes cuenta? Registrate!</string>
+    <string name="olvidaste_tu_contrase_a">¿Olvidaste tu contraseña?</string>
+
+
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Nombre Apellido</string>
+    //Subtitle es el email
+    <string name="nav_header_subtitle">Debug</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_Sign_Out">Cerrar Sesión</string>
+
+    <string name="menu_home">Tomás Presión</string>
+    <string name="menu_historial">Gráfica</string>
+    <string name="menu_vinculacion">Vinculación Doctores</string>
+    <string name="nombre">Nombre:</string>
+    <string name="ingresar_nombre">Ingresar nombre</string>
+    <string name="apellidos">Apellidos:</string>
+    <string name="ingresar_apellidos">Ingresar apellidos</string>
+    <string name="tel_fono">Teléfono:</string>
+    <string name="ingresar_tel_fono">Ingresar teléfono</string>
+    <string name="direcci_n">Dirección:</string>
+    <string name="ingresar_direcci_n">Ingresar dirección</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="ya_tienes_cuenta_ingresa_aqu">¿Ya tienes cuenta? Ingresa aquí</string>
+    <string name="opciones">Opciones</string>
+    <string name="pesoPaciente">Peso (KG)</string>
+    <string name="ingresarPeso">Ingresa tu peso</string>
+    <string name="alturaPaciente">Altura (cm)</string>
+    <string name="ingresarAltura">Ingresa tu altura</string>
+    <string name="menu_datos">Datos</string>
+    <string name="guardar">Guardar</string>
+    <string name="menu_settings">Opciones</string>
+    <string name="userEmail">Email</string>
+    <string name="ingresarNuevoEmail">Ingresa nuevo email</string>
+    <string name="UserPassword">Contraseña</string>
+    <string name="ingresarPassword">Ingresa nueva contraseña</string>
+    <string name="datosPaciente">Información Usuario</string>
+    <string name="sexoPaciente">Sexo</string>
+
+
+    <string name="sex_prompt">Escoge tu sexo</string>
+    <string name="edad">Edad</string>
+    <string name="datePrompt">Ingresa fecha nacimiento</string>
+    <string name="datosCuenta">Opciones</string>
+    <string-array name="sex_array">
+        <item>Masculino</item>
+        <item>Femenino</item>
+    </string-array>
+</resources>

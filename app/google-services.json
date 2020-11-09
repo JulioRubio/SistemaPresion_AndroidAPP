@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "292933360427",
+    "firebase_url": "https://seguimientopresion-1ed12.firebaseio.com",
+    "project_id": "seguimientopresion-1ed12",
+    "storage_bucket": "seguimientopresion-1ed12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292933360427:android:a5235220c6353396aa036e",
+        "android_client_info": {
+          "package_name": "com.example.seguimientopresion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292933360427-bu4v3bfsj8vmlg6d9oquej450hslh75f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwHqw1s_MAhaOxYaxXtyq9RBdGtP_pARg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292933360427-bu4v3bfsj8vmlg6d9oquej450hslh75f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
