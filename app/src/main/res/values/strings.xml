@@ -19,6 +19,15 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_Sign_Out">Cerrar Sesión</string>
 
+    <string name="registro_presion">Registro de Presion</string>
+    <string name="presion_sistolica">Presion Sistolica</string>
+    <string name="presion_diastolica">Presion Diastolica</string>
+    <string name="sistolica_prompt">Ingresar presion sistolica</string>
+    <string name="diastolica_prompt">Ingresar presion diastolica</string>
+    <string name="fecha_generica">Fecha</string>
+    <string name="fecha_generica_prompt">Ingresar fecha</string>
+    <string name="hora_generica">Hora</string>
+    <string name="hora_generica_prompt">Ingresar hora</string>
     <string name="menu_home">Tomás Presión</string>
     <string name="menu_historial">Gráfica</string>
     <string name="menu_vinculacion">Vinculación Doctores</string>
