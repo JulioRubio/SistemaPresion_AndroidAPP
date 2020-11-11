@@ -7,6 +7,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -14,6 +16,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.seguimientopresion.ui.home.RegistroPresionFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -49,6 +52,10 @@ public class HomeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //RegistroPresionFragment registroPresionFragment = new RegistroPresionFragment();
+                //FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                //fragmentTransaction.add(R.id.fragment_container, registroPresionFragment);
+                //fragmentTransaction.commit();
                 Toast.makeText(HomeActivity.this, "Toma de presión", Toast.LENGTH_SHORT).show();
             }
         });
