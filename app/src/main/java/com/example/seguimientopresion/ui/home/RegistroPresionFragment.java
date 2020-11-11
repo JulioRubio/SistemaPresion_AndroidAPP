@@ -58,7 +58,7 @@ public class RegistroPresionFragment extends Fragment implements DatePickerDialo
             }
         });
 
-        bt_guardar = root.findViewById(R.id.guardar_datos);
+        bt_guardar = root.findViewById(R.id.guardar_presion);
 
         bt_guardar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +98,7 @@ public class RegistroPresionFragment extends Fragment implements DatePickerDialo
             }
         });
 
-        ((HomeActivity) getActivity()).showFloatingActionButton();
+        ((HomeActivity) getActivity()).hideFloatingActionButton();
         return root;
     }
 
