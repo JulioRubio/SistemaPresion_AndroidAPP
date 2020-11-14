@@ -52,11 +52,10 @@ public class HomeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //RegistroPresionFragment registroPresionFragment = new RegistroPresionFragment();
-                //FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                //fragmentTransaction.add(R.id.fragment_container, registroPresionFragment);
-                //fragmentTransaction.commit();
-                Toast.makeText(HomeActivity.this, "Toma de presión", Toast.LENGTH_SHORT).show();
+                RegistroPresionFragment registroPresionFragment = new RegistroPresionFragment();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.fragment_container, registroPresionFragment);
+                fragmentTransaction.commit();
             }
         });
     }
