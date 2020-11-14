@@ -1,7 +1,9 @@
 package com.example.seguimientopresion;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ import com.example.seguimientopresion.ui.home.RegistroPresionFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -74,6 +77,24 @@ public class HomeActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.navigation_drawer, menu);
         return true;
+    }
+
+    //Logout
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem)
+    {
+        if(menuItem.getItemId() == R.id.action_settings)
+        {
+            Toast.makeText(HomeActivity.this, "Logout", Toast.LENGTH_SHORT).show();
+            FirebaseAuth.getInstance().signOut();
+            Intent intToLogin = new Intent(HomeActivity.this,MainActivity.class);
+            intToLogin.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intToLogin.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intToLogin.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intToLogin); // Start activity
+            finish();
+        }
+        return super.onOptionsItemSelected(menuItem);
     }
 
     @Override
