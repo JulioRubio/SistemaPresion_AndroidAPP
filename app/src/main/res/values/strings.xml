@@ -24,7 +24,7 @@
     <string name="presion_diastolica">Presion Diastolica</string>
     <string name="sistolica_prompt">Ingresar presion sistolica</string>
     <string name="diastolica_prompt">Ingresar presion diastolica</string>
-    <string name="pulso">Pulso</string>
+    <string name="pulso">Pulso (bpm)</string>
     <string name="pulso_prompt">Ingresar pulso</string>
     <string name="menu_home">Tomás Presión</string>
     <string name="menu_historial">Gráfica</string>

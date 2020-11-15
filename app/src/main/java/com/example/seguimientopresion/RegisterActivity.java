@@ -107,7 +107,6 @@ public class RegisterActivity extends AppCompatActivity {
                                         Log.d(TAG, "OnSiccess: user profile is created for" + userID);
                                     }
                                 });
-
                                 Intent intToHome = new Intent(RegisterActivity.this, HomeActivity.class);
                                 intToHome.putExtra("SESSION_EMAIL", emailText);
                                 startActivity(intToHome); // Go to home activity
