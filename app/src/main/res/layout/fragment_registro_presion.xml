@@ -72,53 +72,25 @@
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/fechaPresionText"
+                android:id="@+id/pulsoText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
                 android:layout_marginTop="44dp"
                 android:layout_marginRight="60dp"
-                android:text="@string/fecha_generica"
+                android:text="@string/pulso"
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/edit_text_datePressure"
+                android:id="@+id/edit_text_pulso"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_marginLeft="60dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="60dp"
-                android:clickable="true"
-                android:editable="false"
                 android:ems="10"
-                android:focusable="false"
-                android:hint="@string/fecha_generica_prompt"
-                android:inputType="date"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/horaPresionText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="44dp"
-                android:layout_marginRight="60dp"
-                android:text="@string/hora_generica"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/edit_text_timePressure"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="60dp"
-                android:clickable="true"
-                android:editable="false"
-                android:ems="10"
-                android:focusable="false"
-                android:hint="@string/hora_generica_prompt"
-                android:inputType="date"
+                android:hint="@string/pulso_prompt"
+                android:inputType="number"
                 android:textSize="14sp" />
 
             <Button

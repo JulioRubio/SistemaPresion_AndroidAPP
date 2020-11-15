@@ -24,10 +24,8 @@
     <string name="presion_diastolica">Presion Diastolica</string>
     <string name="sistolica_prompt">Ingresar presion sistolica</string>
     <string name="diastolica_prompt">Ingresar presion diastolica</string>
-    <string name="fecha_generica">Fecha</string>
-    <string name="fecha_generica_prompt">Ingresar fecha</string>
-    <string name="hora_generica">Hora</string>
-    <string name="hora_generica_prompt">Ingresar hora</string>
+    <string name="pulso">Pulso (bpm)</string>
+    <string name="pulso_prompt">Ingresar pulso</string>
     <string name="menu_home">Tomás Presión</string>
     <string name="menu_historial">Gráfica</string>
     <string name="menu_vinculacion">Vinculación Doctores</string>
