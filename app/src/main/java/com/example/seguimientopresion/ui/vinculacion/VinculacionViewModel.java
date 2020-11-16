@@ -10,7 +10,7 @@ public class VinculacionViewModel extends ViewModel {
 
     public VinculacionViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Vinculación doctores");
+        //mText.setValue("Vinculación doctores");
     }
 
     public LiveData<String> getText() {
