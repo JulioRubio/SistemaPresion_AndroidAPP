@@ -51,13 +51,14 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Login successful",Toast.LENGTH_SHORT).show();
                     Intent intToHome = new Intent(MainActivity.this,HomeActivity.class);
                     intToHome.putExtra("SESSION_EMAIL", Email);
-                    intToHome.putExtra("USER_ID",UserId);
+                  
+                    //intToHome.putExtra("USER_ID",UserId); //Github mark this as conflict so for test remove the comment to check if it works 
+
                     startActivity(intToHome); // Go to home activity
                     finish();
                 }
             }
         };
-
         //Set click listener to Button Login to retrieve the user and password from edit text
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
