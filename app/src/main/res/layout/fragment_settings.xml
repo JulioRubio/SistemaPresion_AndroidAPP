@@ -13,7 +13,6 @@
         android:id="@+id/datosCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
         android:text="@string/datosCuenta"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -29,17 +28,16 @@
         android:layout_marginRight="60dp"
         android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/edit_text_email"
+    <Button
+        android:id="@+id/guardar_email"
+        android:text="@string/actualizarEmail"
+        android:layout_width="280dp"
         android:layout_height="45dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="@string/ingresarNuevoEmail"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:inputType="textWebEmailAddress"
-        android:layout_width="match_parent"
-        android:textSize="14sp" />
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        />
+
 
     <TextView
         android:id="@+id/userPassword"
@@ -50,25 +48,12 @@
         android:layout_marginRight="60dp"
         android:layout_width="match_parent"
         android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/edit_text_password"
-        android:layout_height="45dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="@string/ingresarPassword"
-        android:layout_marginLeft="60dp"
-        android:inputType="textPassword"
-        android:layout_marginRight="60dp"
-        android:layout_width="match_parent"
-        android:textSize="14sp" />
-
     <Button
-        android:id="@+id/guardar_settings"
-        android:layout_width="143dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:id="@+id/btn_newPassword"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="@string/actualizarPassword"
         android:gravity="center"
         android:layout_gravity="center"
-        android:text="@string/guardar"/>
+        android:layout_marginTop="10dp"/>
 </LinearLayout>
