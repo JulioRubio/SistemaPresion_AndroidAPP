@@ -49,12 +49,12 @@ public class MainActivity extends AppCompatActivity {
                     Email = mFirebaseUser.getEmail();
                     Toast.makeText(MainActivity.this, "Login successful",Toast.LENGTH_SHORT).show();
                     Intent intToHome = new Intent(MainActivity.this,HomeActivity.class);
+                    intToHome.putExtra("SESSION_EMAIL", Email);
                     startActivity(intToHome); // Go to home activity
                     finish();
                 }
             }
         };
-
         //Set click listener to Button Login to retrieve the user and password from edit text
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override

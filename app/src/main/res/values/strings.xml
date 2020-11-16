@@ -56,7 +56,7 @@
 
 
     <string name="sex_prompt">Escoge tu sexo</string>
-    <string name="edad">Edad</string>
+    <string name="edad">Fecha Nacimiento</string>
     <string name="datePrompt">Ingresa fecha nacimiento</string>
     <string name="datosCuenta">Opciones</string>
     <string name="vinculaci_n_doctores">Vinculación Doctores</string>
