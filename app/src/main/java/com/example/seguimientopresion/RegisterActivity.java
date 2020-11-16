@@ -109,6 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 });
                                 Intent intToHome = new Intent(RegisterActivity.this, HomeActivity.class);
                                 intToHome.putExtra("SESSION_EMAIL", emailText);
+                                intToHome.putExtra("USER_ID",userID);
                                 startActivity(intToHome); // Go to home activity
                                 finish(); // Finish RegisterActivity
                             }
