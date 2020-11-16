@@ -59,16 +59,13 @@
     <string name="edad">Edad</string>
     <string name="datePrompt">Ingresa fecha nacimiento</string>
     <string name="datosCuenta">Opciones</string>
-<<<<<<< Updated upstream
     <string name="vinculaci_n_doctores">Vinculación Doctores</string>
     <string name="id_doctor">ID Doctor:</string>
     <string name="ingresar_id_brindado_por_su_doctor">Ingresar ID brindado por su doctor</string>
     <string name="vincular">Vincular</string>
-=======
     <string name="actualizar">Actualizar</string>
     <string name="actualizarPassword">Actualizar Contraseña</string>
     <string name="actualizarEmail">Actualizar Email</string>
->>>>>>> Stashed changes
     <string-array name="sex_array">
         <item>Masculino</item>
         <item>Femenino</item>
