@@ -99,6 +99,7 @@ public class RegistroPresionFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        ((HomeActivity) getActivity()).showFloatingActionButton();
         getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
     }
 }
