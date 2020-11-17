@@ -18,14 +18,17 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
 
+import com.example.seguimientopresion.ui.home.HomeFragment;
 import com.example.seguimientopresion.ui.home.RegistroPresionFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity{
 
     private AppBarConfiguration mAppBarConfiguration;
     String Email;
@@ -68,9 +71,7 @@ public class HomeActivity extends AppCompatActivity {
         fab.show();
     };
 
-    public void hideFloatingActionButton() {
-        fab.hide();
-    };
+    public void hideFloatingActionButton() { fab.hide(); };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

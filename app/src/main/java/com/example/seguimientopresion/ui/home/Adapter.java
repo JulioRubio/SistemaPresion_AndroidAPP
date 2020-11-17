@@ -9,48 +9,41 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.seguimientopresion.Pacientes;
 import com.example.seguimientopresion.R;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
+public class Adapter extends FirestoreRecyclerAdapter<Pacientes, Adapter.PresionHolder> {
 
-    private Context mContexT;
-    private List<Pacientes> mPacientesList;
+    public Adapter(@NonNull FirestoreRecyclerOptions<Pacientes> options) {
+        super(options);
+    }
 
-    public Adapter(Context mContexT, List<Pacientes> mMateriasList) {
-        this.mContexT = mContexT;
-        this.mPacientesList = mMateriasList;
+    @Override
+    protected void onBindViewHolder(@NonNull PresionHolder holder, int position, @NonNull Pacientes model) {
+        holder.mSys.setText(model.getSys());
+        holder.mDys.setText(model.getDys());
+        holder.mPulso.setText(model.getPulse());
+        holder.mDate.setText(model.getDate());
     }
 
     @NonNull
     @Override
-    public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContexT).inflate(R.layout.tomas_presion_item,parent,false);
-        return new ViewHolder(view);
+    public PresionHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tomas_presion_item,parent,false);
+        return new PresionHolder(view);
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
-        // Agrega código aquí
-        Pacientes currentItem = mPacientesList.get(position);
-    }
+    class PresionHolder extends RecyclerView.ViewHolder{
 
-    @Override
-    public int getItemCount() {
-        // Agrega código aquí
-        return mPacientesList.size();
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        // Agrega código aquí
         public TextView mDate;
         public TextView mSys;
         public TextView mDys;
         public TextView mPulso;
 
-        public ViewHolder(@NonNull View itemView) {
+        public PresionHolder(@NonNull View itemView) {
             super(itemView);
             mDate = itemView.findViewById(R.id.txt_date);
             mSys = itemView.findViewById(R.id.txt_sistolica);
@@ -59,3 +52,4 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         }
     }
 }
+
