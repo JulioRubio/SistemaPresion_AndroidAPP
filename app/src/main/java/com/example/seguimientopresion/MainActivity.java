@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     EditText email, password;
     Button bLogin, bRegister, bForgotPassword;
     FirebaseAuth mFirebaseAuth;
-    private String Email;
+    private String Email, UserId;
 
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
@@ -47,9 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 if(mFirebaseUser != null)
                 {
                     Email = mFirebaseUser.getEmail();
+                    UserId = mFirebaseUser.getUid();
                     Toast.makeText(MainActivity.this, "Login successful",Toast.LENGTH_SHORT).show();
                     Intent intToHome = new Intent(MainActivity.this,HomeActivity.class);
                     intToHome.putExtra("SESSION_EMAIL", Email);
+                  
+                    //intToHome.putExtra("USER_ID",UserId); //Github mark this as conflict so for test remove the comment to check if it works 
+
                     startActivity(intToHome); // Go to home activity
                     finish();
                 }
@@ -89,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                             {
                                 Intent intToHome = new Intent(MainActivity.this,HomeActivity.class);
                                 intToHome.putExtra("SESSION_EMAIL", emailText);
+                                intToHome.putExtra("USER_ID",UserId);
                                 startActivity(intToHome); // Go to home activity
                                 finish(); // Finish MainActivity
                             }
