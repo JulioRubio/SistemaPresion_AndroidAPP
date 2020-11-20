@@ -27,8 +27,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Source;
 
 public class SettingsFragment extends Fragment {
-
-    private SettingsViewModel mViewModel;
     EditText et_email, popUpPassword;
     TextView t_email, t_password;
     Button bt_newEmail, bt_newPassword, btnPopUpActualizar, btnPopUpCancel;
@@ -39,7 +37,6 @@ public class SettingsFragment extends Fragment {
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
-    private EditText confirmPassword;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
