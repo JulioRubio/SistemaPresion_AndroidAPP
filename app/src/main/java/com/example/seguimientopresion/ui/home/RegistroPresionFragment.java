@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.seguimientopresion.R;
 import com.example.seguimientopresion.HomeActivity;
@@ -82,6 +83,7 @@ public class RegistroPresionFragment extends Fragment {
                     registry.put("date_time", sdf.format(reg_date));
                     documentReference.update("history", FieldValue.arrayUnion(registry));
                     Toast.makeText(v.getContext(), "Presion registrada exitosamente",Toast.LENGTH_SHORT).show();
+                    onDestroy();
                 }
                 else
                 {
@@ -92,5 +94,12 @@ public class RegistroPresionFragment extends Fragment {
 
         ((HomeActivity) getActivity()).hideFloatingActionButton();
         return root;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ((HomeActivity) getActivity()).showFloatingActionButton();
+        getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
     }
 }

@@ -19,7 +19,10 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
 
+import com.example.seguimientopresion.ui.home.HomeFragment;
 import com.example.seguimientopresion.ui.home.RegistroPresionFragment;
 import com.example.seguimientopresion.ui.vinculacion.VinculacionFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,7 +37,7 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class HomeActivity extends AppCompatActivity implements VinculacionFragment.OnFragmentInteractionListener{
-
+  
     private AppBarConfiguration mAppBarConfiguration;
     String Email, UserId;
     private FirebaseFirestore database;
@@ -79,9 +82,7 @@ public class HomeActivity extends AppCompatActivity implements VinculacionFragme
         fab.show();
     };
 
-    public void hideFloatingActionButton() {
-        fab.hide();
-    };
+    public void hideFloatingActionButton() { fab.hide(); };
 
     //Search for doctor in collection doctor, IMPORTANT TO CHANGE TO COLLECTION DOCTOR!!!
     private void searchUser(final String doctorId)
