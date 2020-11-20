@@ -55,6 +55,7 @@ public class HomeActivity extends AppCompatActivity implements VinculacionFragme
                 R.id.nav_home, R.id.nav_historial, R.id.nav_vinculacion, R.id.nav_datos, R.id.nav_settings)
                 .setDrawerLayout(drawer)
                 .build();
+        
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
