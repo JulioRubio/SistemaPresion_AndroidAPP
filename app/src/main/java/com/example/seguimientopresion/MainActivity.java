@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intToHome = new Intent(MainActivity.this,HomeActivity.class);
                     intToHome.putExtra("SESSION_EMAIL", Email);
                   
-                    //intToHome.putExtra("USER_ID",UserId); //Github mark this as conflict so for test remove the comment to check if it works 
+                    intToHome.putExtra("USER_ID",UserId); //Github mark this as conflict so for test remove the comment to check if it works
 
                     startActivity(intToHome); // Go to home activity
                     finish();
