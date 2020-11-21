@@ -10,12 +10,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import com.example.seguimientopresion.R;
 import com.example.seguimientopresion.HomeActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -27,7 +27,6 @@ import java.text.SimpleDateFormat;
 
 public class RegistroPresionFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
     EditText et_sistolica, et_diastolica, et_pulso;
     Button bt_guardar;
     String userID;
@@ -72,7 +71,7 @@ public class RegistroPresionFragment extends Fragment {
                 }
                 if(!(sistolicText.isEmpty() && diastolicText.isEmpty() && pulseText.isEmpty()))
                 {
-                    DocumentReference documentReference = mFirestore.collection("users").document(userID);
+                    CollectionReference collection = mFirestore.collection("users").document(userID).collection("BloodPressure");
                     Map<String,Object> registry = new HashMap<>();
                     registry.put("sistolic",sistolicText);
                     registry.put("diastolic",diastolicText);
@@ -81,9 +80,12 @@ public class RegistroPresionFragment extends Fragment {
                     SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
                     Date reg_date = new Date(millis);
                     registry.put("date_time", sdf.format(reg_date));
-                    documentReference.update("history", FieldValue.arrayUnion(registry));
+
+                    collection.document().set(registry);
+
                     Toast.makeText(v.getContext(), "Presion registrada exitosamente",Toast.LENGTH_SHORT).show();
                     onDestroy();
+
                 }
                 else
                 {
@@ -95,7 +97,6 @@ public class RegistroPresionFragment extends Fragment {
         ((HomeActivity) getActivity()).hideFloatingActionButton();
         return root;
     }
-
     @Override
     public void onDestroy() {
         super.onDestroy();

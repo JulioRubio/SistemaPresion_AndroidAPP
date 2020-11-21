@@ -4,19 +4,7 @@ package com.example.seguimientopresion.ui.home;
 //Pacientes, constructor Getters y Setters
 public class Pacientes {
 
-    public String getSys() {
-        return sistolic;
-    }
-
-    public String getDys() {
-        return diastolic;
-    }
-
-    public String getPulse() {
-        return pulse;
-    }
-
-    public String getDate() { return date_time; }
+    public Pacientes(){}
 
     public Pacientes(String sistolic, String diastolic, String pulse, String date_time) {
         this.sistolic = sistolic;
@@ -25,18 +13,32 @@ public class Pacientes {
         this.date_time = date_time;
     }
 
-    public Pacientes(){}
+    public String getSistolic() {
+        return sistolic;
+    }
 
     public void setSistolic(String sistolic) {
         this.sistolic = sistolic;
+    }
+
+    public String getDiastolic() {
+        return diastolic;
     }
 
     public void setDiastolic(String diastolic) {
         this.diastolic = diastolic;
     }
 
+    public String getPulse() {
+        return pulse;
+    }
+
     public void setPulse(String pulse) {
         this.pulse = pulse;
+    }
+
+    public String getDate_time() {
+        return date_time;
     }
 
     public void setDate_time(String date_time) {

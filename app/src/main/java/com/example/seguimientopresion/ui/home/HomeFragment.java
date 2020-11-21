@@ -17,12 +17,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+import java.util.List;
+
 
 public class HomeFragment extends Fragment  {
     private String userID;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseFirestore mFirestore;
     private Adapter adapter;
+
+    private List<Pacientes> mHistory;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,7 +35,6 @@ public class HomeFragment extends Fragment  {
         mFirebaseAuth = FirebaseAuth.getInstance();
         setUpRecyclerView(root);
 
-
         ((HomeActivity) getActivity()).showFloatingActionButton();
         return root;
     }
@@ -39,8 +42,8 @@ public class HomeFragment extends Fragment  {
 
     private void setUpRecyclerView(View root){
         userID = mFirebaseAuth.getCurrentUser().getUid();
-        Query query = mFirestore.collection("users");
-        System.out.println(query);
+
+        Query query = mFirestore.collection("users").document(userID).collection("BloodPressure");
 
         FirestoreRecyclerOptions<Pacientes> options = new FirestoreRecyclerOptions.Builder<Pacientes>()
                 .setQuery(query, Pacientes.class)
@@ -52,6 +55,7 @@ public class HomeFragment extends Fragment  {
         rv.setLayoutManager(new LinearLayoutManager(root.getContext()));
         rv.setAdapter(adapter);
     }
+
     @Override
     public void onStart() {
         super.onStart();

@@ -27,7 +27,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Source;
 
 public class SettingsFragment extends Fragment {
-
     EditText et_email, popUpPassword;
     TextView t_email, t_password;
     Button bt_newEmail, bt_newPassword, btnPopUpActualizar, btnPopUpCancel;
@@ -38,7 +37,6 @@ public class SettingsFragment extends Fragment {
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
-    private EditText confirmPassword;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -78,12 +76,12 @@ public class SettingsFragment extends Fragment {
                         String userNewEmail = et_email.getText().toString();
 
                         if(!userNewEmail.isEmpty() && !userNewPassword.isEmpty()) {
-                            final DocumentReference documentReference = mFirestore.collection("users").document(userID);
+                            DocumentReference documentReference = mFirestore.collection("users").document(userID);
                             documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                     if (task.isSuccessful()) {
-                                        final DocumentSnapshot document = task.getResult();
+                                        DocumentSnapshot document = task.getResult();
                                         if (document.exists()) {
                                             final String userEmail = document.get("email").toString();
                                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -93,12 +91,11 @@ public class SettingsFragment extends Fragment {
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()){
                                                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                                        final String newEmail = et_email.getText().toString();
+                                                        String newEmail = et_email.getText().toString();
                                                         user.updateEmail(newEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if (task.isSuccessful()) {
-                                                                    documentReference.update("email",newEmail);
                                                                     Toast.makeText(getContext(), "Email cambiado exitosamente", Toast.LENGTH_SHORT).show();
                                                                     dialog.dismiss();
                                                                 }

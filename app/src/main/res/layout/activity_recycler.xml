@@ -12,22 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/fragment_container"></FrameLayout>
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/darker_gray">
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray">
         </androidx.recyclerview.widget.RecyclerView>
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-
 </LinearLayout>

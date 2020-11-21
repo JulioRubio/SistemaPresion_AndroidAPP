@@ -30,8 +30,6 @@ import java.util.Calendar;
 
 
 public class DatosPacienteFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
-
-    private DatosPacienteViewModel datosPacienteViewModel;
     EditText eT_peso, eT_altura, et_date;
     Spinner sp_sexo;
     Button guardar;

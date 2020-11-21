@@ -18,29 +18,32 @@
 
             <TextView
                 android:id="@+id/txt_sistolica"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
                 android:text="TextView"
-                android:layout_marginLeft="5dp"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:textSize="20sp"
                 />
 
             <TextView
                 android:id="@+id/txt_diastolica"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
                 android:text="TextView"
-                android:layout_marginLeft="5dp"
+                android:textSize="20sp"
                 />
 
             <TextView
                 android:id="@+id/txt_pulso"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
                 android:text="TextView"
-                android:layout_marginLeft="5dp" />
+                android:textSize="20sp"/>
         </LinearLayout>
         <TextView
             android:id="@+id/txt_date"

@@ -22,7 +22,4 @@ public class DatePickerFragment extends DialogFragment{
 
         return new DatePickerDialog(getActivity(), (DatePickerDialog.OnDateSetListener) getTargetFragment(), year, month, day);
     }
-
-
-
 }

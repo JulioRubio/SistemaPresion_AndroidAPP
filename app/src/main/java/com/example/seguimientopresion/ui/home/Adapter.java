@@ -17,16 +17,14 @@ import java.util.List;
 
 public class Adapter extends FirestoreRecyclerAdapter<Pacientes, Adapter.PresionHolder> {
 
-    public Adapter(@NonNull FirestoreRecyclerOptions<Pacientes> options) {
-        super(options);
-    }
+    public Adapter(@NonNull FirestoreRecyclerOptions<Pacientes> options) { super(options); }
 
     @Override
     protected void onBindViewHolder(@NonNull PresionHolder holder, int position, @NonNull Pacientes model) {
-        holder.mSys.setText(model.getSys());
-        holder.mDys.setText(model.getDys());
+        holder.mSys.setText(model.getSistolic());
+        holder.mDys.setText(model.getDiastolic());
         holder.mPulso.setText(model.getPulse());
-        holder.mDate.setText(model.getDate());
+        holder.mDate.setText("Fecha y hora: " + model.getDate_time());
     }
 
     @NonNull
