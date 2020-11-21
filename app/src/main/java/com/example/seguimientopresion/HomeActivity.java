@@ -85,10 +85,10 @@ public class HomeActivity extends AppCompatActivity implements VinculacionFragme
 
     public void hideFloatingActionButton() { fab.hide(); };
 
-    //Search for doctor in collection doctor, IMPORTANT TO CHANGE TO COLLECTION DOCTOR!!!
+    //Search for doctor in collection doctor
     private void searchUser(final String doctorId)
     {
-        database.collection("pruebaVinculacion")//Change for doctor collection
+        database.collection("doctors")
             .document(doctorId)
             .get()
             .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -128,8 +128,8 @@ public class HomeActivity extends AppCompatActivity implements VinculacionFragme
     //Add Doctor to array of patients, in Doctor document
     private void addPatientToDoctor(final String doctorId)
     {
-        CollectionReference users = database.collection("pruebaVinculacion"); //CHANGE THIS FOR DOCTOR DOCUMENT, THIS IS JUST FOR TESTS
-        users.document(doctorId).update("patients", FieldValue.arrayUnion(UserId)).addOnCompleteListener(this, new OnCompleteListener<Void>() {
+        CollectionReference users = database.collection("doctors");
+        users.document(doctorId).update("pendientes", FieldValue.arrayUnion(UserId)).addOnCompleteListener(this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
@@ -180,7 +180,6 @@ public class HomeActivity extends AppCompatActivity implements VinculacionFragme
         if(choice == 0)
         {
             searchUser(doctorId);
-            //Toast.makeText(HomeActivity.this,"Vincular: " + doctorId + " with: " + UserId,Toast.LENGTH_SHORT).show();
         }
     }
 
