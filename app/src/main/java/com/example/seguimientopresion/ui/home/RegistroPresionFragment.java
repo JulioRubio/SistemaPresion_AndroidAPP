@@ -1,7 +1,9 @@
 package com.example.seguimientopresion.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.seguimientopresion.MainActivity;
 import com.example.seguimientopresion.R;
 import com.example.seguimientopresion.HomeActivity;
 
@@ -101,6 +104,7 @@ public class RegistroPresionFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         ((HomeActivity) getActivity()).showFloatingActionButton();
+        ((HomeActivity) getActivity()).setTitleCardVisibility();
         getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
     }
 }
