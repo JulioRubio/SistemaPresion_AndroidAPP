@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,7 +34,6 @@ public class DatosPacienteFragment extends Fragment implements DatePickerDialog.
     EditText eT_peso, eT_altura, et_date;
     Spinner sp_sexo;
     Button guardar;
-
     String userID;
 
     FirebaseAuth mFirebaseAuth;
@@ -45,7 +45,7 @@ public class DatosPacienteFragment extends Fragment implements DatePickerDialog.
 //        datosPacienteViewModel =
 //                new ViewModelProvider(this).get(DatosPacienteViewModel.class);
 
-        View root = inflater.inflate(R.layout.fragment_datos, container, false);
+        final View root = inflater.inflate(R.layout.fragment_datos, container, false);
 
         eT_altura = root.findViewById(R.id.editText_Altura);
         eT_peso = root.findViewById(R.id.edit_text_peso);
@@ -68,6 +68,27 @@ public class DatosPacienteFragment extends Fragment implements DatePickerDialog.
 
         userID = mFirebaseAuth.getCurrentUser().getUid();
 
+        final DocumentReference documentReference = mFirestore.collection("users").document(userID);
+        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+
+                        if(document.get("birthdate") != null)
+                            et_date.setText(document.get("birthdate").toString());
+
+                        if(document.get("weight") != null)
+                            eT_peso.setText(document.get("weight").toString());
+
+                        if(document.get("height") != null)
+                            eT_altura.setText(document.get("height").toString());
+                    }
+                }
+            }
+        });
+
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +98,6 @@ public class DatosPacienteFragment extends Fragment implements DatePickerDialog.
                 final String sexo = sp_sexo.getSelectedItem().toString();
 
                 if(!date.isEmpty() && !peso.isEmpty() && !altura.isEmpty()){
-                    final DocumentReference documentReference = mFirestore.collection("users").document(userID);
                     documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -86,9 +106,7 @@ public class DatosPacienteFragment extends Fragment implements DatePickerDialog.
                                 documentReference.update("weight",peso);
                                 documentReference.update("height",altura);
                                 documentReference.update("sex",sexo);
-                                et_date.setText("");
-                                eT_altura.setText("");
-                                eT_peso.setText("");
+                                Toast.makeText(root.getContext(), "Datos guardados con exito", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
